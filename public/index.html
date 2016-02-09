@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Kanban</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
-<body>
+<body ng-app="myApp">
 
+<div ng-view></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js"></script>
+  <script src="js/myApp.js"></script>
+  <script src="controllers/card-controller.js"></script>
+  <script src="services.js"></script>
 </body>
 </html>

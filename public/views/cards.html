@@ -1,0 +1,43 @@
+  <div class="columns">Queue</div>
+
+
+  <div class="columns">In-Progress</div>
+
+
+  <div class="columns">Done</div>
+
+  <h4>CardService</h4>
+  <div class="search_book_title_container">
+    <label for="search_book_title">Search Card Status:</label>
+    <input id="search_book_title" type="text" ng-model="searchCardFilter"
+  </div>
+
+  <ul class="cards">
+    <li ng-repeat="card in CardService.cards | filter:card.status=searchCardFilter | orderBy:status">
+      <h4 class="card_title">{{ card.title }}</h4>
+      <p class="card_priority">{{ card.priority }}</p>
+      <p class="card_createdBy">{{ card.createdBy }}</p>
+      <p class="card_assignedTo">{{ card.assignedTo }}</p>
+    </li>
+  </ul>
+
+  <fieldset>
+    <div>
+      <label for="new_card_title">Title</label>
+      <input id="new_card_title" type="text" ng-model="new_card.title">
+    </div>
+    <div>
+      <label for="new_card_priority">Priority</label>
+      <input id="new_card_priority" type="text" ng-model="new_card.priority">
+    </div>
+    <div class="commit">
+      <button type="button" ng-click="CardService.addCard(new_card); new_card = null">Add Card</button>
+    </div>
+  </fieldset>
+
+<!--   <div>
+    <input type="text" ng-models"myModel">
+  </div>
+  <div>
+    {{myModel}}
+  </div> -->

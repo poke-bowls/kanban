@@ -1,0 +1,10 @@
+body {
+  background-color: white;
+}
+
+.columns {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  background-color: cyan;
+}
