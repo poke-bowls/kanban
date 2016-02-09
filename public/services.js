@@ -9,7 +9,7 @@
         priority : 'High',
         createdBy : 'Brad Da Bishop',
         assignedTo : 'B-rad',
-        status : 0
+        status : "Done"
       },
       {
         id : 2,
@@ -17,7 +17,7 @@
         priority : 'Low',
         createdBy : 'Poopoopants',
         assignedTo : 'Poop',
-        status : 1
+        status : "Queue"
       },
       {
         id : 3,
@@ -25,7 +25,7 @@
         priority : 'Medium',
         createdBy : 'The Colonel',
         assignedTo : 'The Colonel',
-        status : 2
+        status : "In Progress"
       }
     ];
 
