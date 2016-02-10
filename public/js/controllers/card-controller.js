@@ -9,4 +9,10 @@ angular.module('myApp')
     // console.log(data);
     $scope.Cards = data;
   });
+  $scope.clickButton=function(card) {
+    CardService.addCard(card).then(function(data) {
+      $scope.Cards.push(data.data);
+    });
+
+  };
 }]);

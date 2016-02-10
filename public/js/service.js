@@ -74,11 +74,11 @@ angular.module('myApp')
       return $http.get('http://localhost:3000/api/cards');
     };
     this.addCard = function(card){
-      return $http.post('/new', card)
-      .then(function(data) {
-      console.log( 'Hooowwwdy',data);
+      return $http.post('/new', card);
+      // .then(function(data) {
+      // console.log( 'Hooowwwdy',data);
 
-      });
+      // });
 
 
     };

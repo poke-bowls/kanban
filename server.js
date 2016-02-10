@@ -46,10 +46,9 @@ app.get('/api/cards', function (req, res){
 });
 
 app.post('/new', function (req, res) {
-
-  cards.push(req.body);
-  console.log("Check this out", req.body);
-  res.sendStatus(200);
+  var block = req.body
+  cards.push(block);
+  res.json(block);
 
 });
 
