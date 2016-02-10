@@ -73,7 +73,13 @@ angular.module('myApp')
     this.getCards = function(){
       return $http.get('http://localhost:3000/api/cards');
     };
-    this.addCard = function(){
+    this.addCard = function(card){
+      return $http.post('/new', card)
+      .then(function(data) {
+      console.log( 'Hooowwwdy',data);
+
+      });
+
 
     };
   }]);

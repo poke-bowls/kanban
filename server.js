@@ -2,10 +2,14 @@
 
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
+
 //add sequelize
 
 app.use(express.static('./public'));
+
+app.use(bodyParser.json());
 
     var cards = [
       {
@@ -39,6 +43,14 @@ app.get('/api/cards', function (req, res){
     //   .then(function(users){
      res.json(cards);
       // });
+});
+
+app.post('/new', function (req, res) {
+
+  cards.push(req.body);
+  console.log("Check this out", req.body);
+  res.sendStatus(200);
+
 });
 
 // cards is an array of objects

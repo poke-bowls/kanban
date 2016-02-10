@@ -4,26 +4,23 @@
     <p class="card_priority">{{ card.priority }}</p>
     <p class="card_createdBy">{{ card.createdBy }}</p>
     <p class="card_assignedTo">{{ card.assignedTo }}</p>
-    <p>{{ card.status }} </p>
   </div>
  <div class="columns" id="in_progress" ng-switch-when="In Progress">In-Progress
     <h4 class="card_title">{{ card.title }}</h4>
     <p class="card_priority">{{ card.priority }}</p>
     <p class="card_createdBy">{{ card.createdBy }}</p>
     <p class="card_assignedTo">{{ card.assignedTo }}</p>
-    <p>{{ card.status }} </p>
   </div>
   <div class="columns" id="done" ng-switch-when="Done">Done
     <h4 class="card_title">{{ card.title }}</h4>
     <p class="card_priority">{{ card.priority }}</p>
     <p class="card_createdBy">{{ card.createdBy }}</p>
     <p class="card_assignedTo">{{ card.assignedTo }}</p>
-    <p>{{ card.status }} </p>
   </div>
 </div>
 
-<!--
-  <h4>CardService</h4>
+
+  <!-- <h4>CardService</h4>
   <div class="search_card_title_container">
     <label for="search_card_title">Search Card Status:</label>
     <input id="search_card_title" type="text" ng-model="searchCardFilter"
@@ -34,26 +31,30 @@
       <p>{{ new_card.priority }}</p>
       <p>{{ new_card.createdBy }}</p>
       <p>{{ new_card.assignedTo }}</p>
-    </div>
+    </div> -->
 
   <fieldset>
     <div>
-      <label for="new_card_title">Title</label>
-      <input id="new_card_title" type="text" ng-model="new_card.title">
+      <label for="title">Title</label>
+      <input id="new_card_title" type="text" ng-model="card.title">
     </div>
     <div>
-      <label for="new_card_priority">Priority</label>
-      <input id="new_card_priority" type="text" ng-model="new_card.priority">
+      <label for="priority">Priority</label>
+      <input id="new_card_priority" type="text" ng-model="card.priority">
     </div>
     <div>
-      <label for="new_card_createdBy">Created By</label>
-      <input id="new_card_createdBy" type="text" ng-model="new_card.createdBy">
+      <label for="createdBy">Created By</label>
+      <input id="new_card_createdBy" type="text" ng-model="card.createdBy">
     </div>
      <div>
-      <label for="new_card_assignedTo">Assigned To</label>
-      <input id="new_card_assignedTo" type="text" ng-model="new_card.assignedTo">
+      <label for="assignedTo">Assigned To</label>
+      <input id="new_card_assignedTo" type="text" ng-model="card.assignedTo">
+    </div>
+    <div>
+      <label for="status">Status</label>
+      <input id="new_card_assignedTo" type="text" ng-model="card.status">
     </div>
     <div class="commit">
-      <button type="button" ng-click="CardService.addCard(new_card); new_card = null">Add Card</button>
+      <button type="button" ng-click="CardService.addCard(card); card = null">Add Card</button>
     </div>
-  </fieldset> -->
+  </fieldset>
