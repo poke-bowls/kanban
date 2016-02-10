@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 
 //add sequelize
@@ -10,6 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('./public'));
 
 app.use(bodyParser.json());
+
+app.use(methodOverride(function ( req, res ){
+  var method = req.body._method;
+  delete req.body._method;
+  return method;
+}));
 
     var cards = [
       {
@@ -49,7 +56,10 @@ app.post('/new', function (req, res) {
   var block = req.body
   cards.push(block);
   res.json(block);
+});
 
+app.put('/edit', function (req, res){
+  console.log('TEST', req.body);
 });
 
 // cards is an array of objects

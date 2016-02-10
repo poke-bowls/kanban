@@ -18,7 +18,8 @@
   "homepage": "https://github.com/poke-bowls/kanban#readme",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "method-override": "^2.3.5"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

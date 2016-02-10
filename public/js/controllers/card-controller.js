@@ -13,6 +13,10 @@ angular.module('myApp')
     CardService.addCard(card).then(function(data) {
       $scope.Cards.push(data.data);
     });
-
+  };
+  $scope.submit = function(card) {
+    CardService.editCard(card).then(function(data){
+      $scope.Cards.push(data.data);
+    });
   };
 }]);
