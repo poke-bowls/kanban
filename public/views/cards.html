@@ -1,36 +1,42 @@
+<div class="cards" ng-repeat='card in Cards' | ng-switch on= "card.status">
+  <div class="columns" id="queue" ng-switch-when="Queue">Queue
+    <h4 class="card_title">{{ card.title }}</h4>
+    <p class="card_priority">{{ card.priority }}</p>
+    <p class="card_createdBy">{{ card.createdBy }}</p>
+    <p class="card_assignedTo">{{ card.assignedTo }}</p>
+    <p>{{ card.status }} </p>
+  </div>
+ <div class="columns" id="in_progress" ng-switch-when="In Progress">In-Progress
+    <h4 class="card_title">{{ card.title }}</h4>
+    <p class="card_priority">{{ card.priority }}</p>
+    <p class="card_createdBy">{{ card.createdBy }}</p>
+    <p class="card_assignedTo">{{ card.assignedTo }}</p>
+    <p>{{ card.status }} </p>
+  </div>
+  <div class="columns" id="done" ng-switch-when="Done">Done
+    <h4 class="card_title">{{ card.title }}</h4>
+    <p class="card_priority">{{ card.priority }}</p>
+    <p class="card_createdBy">{{ card.createdBy }}</p>
+    <p class="card_assignedTo">{{ card.assignedTo }}</p>
+    <p>{{ card.status }} </p>
+  </div>
+</div>
 
-  <div class="cards" ng-repeat='card in CardService.cards' | ng-switch on= "card.status">
-    <div class="columns" id="queue" ng-switch-when="Queue">Queue
-      <h4 class="card_title">{{ card.title }}</h4>
-      <p class="card_priority">{{ card.priority }}</p>
-      <p class="card_createdBy">{{ card.createdBy }}</p>
-      <p class="card_assignedTo">{{ card.assignedTo }}</p>
-      <p>{{ card.status }} </p>
-    </div>
-   <div class="columns" id="in_progress" ng-switch-when="In Progress">In-Progress
-      <h4 class="card_title">{{ card.title }}</h4>
-      <p class="card_priority">{{ card.priority }}</p>
-      <p class="card_createdBy">{{ card.createdBy }}</p>
-      <p class="card_assignedTo">{{ card.assignedTo }}</p>
-      <p>{{ card.status }} </p>
-    </div>
-    <div class="columns" id="done" ng-switch-when="Done">Done
-      <h4 class="card_title">{{ card.title }}</h4>
-      <p class="card_priority">{{ card.priority }}</p>
-      <p class="card_createdBy">{{ card.createdBy }}</p>
-      <p class="card_assignedTo">{{ card.assignedTo }}</p>
-      <p>{{ card.status }} </p>
-    </div>
+<!--
+  <h4>CardService</h4>
+  <div class="search_card_title_container">
+    <label for="search_card_title">Search Card Status:</label>
+    <input id="search_card_title" type="text" ng-model="searchCardFilter"
   </div>
 
-  <!-- <h4>CardService</h4>
-  <div class="search_book_title_container">
-    <label for="search_book_title">Search Card Status:</label>
-    <input id="search_book_title" type="text" ng-model="searchCardFilter"
-  </div> -->
+    <div>
+      <h4>{{ new_card.title }}</h4>
+      <p>{{ new_card.priority }}</p>
+      <p>{{ new_card.createdBy }}</p>
+      <p>{{ new_card.assignedTo }}</p>
+    </div>
 
-
-  <!-- <fieldset>
+  <fieldset>
     <div>
       <label for="new_card_title">Title</label>
       <input id="new_card_title" type="text" ng-model="new_card.title">
@@ -39,14 +45,15 @@
       <label for="new_card_priority">Priority</label>
       <input id="new_card_priority" type="text" ng-model="new_card.priority">
     </div>
+    <div>
+      <label for="new_card_createdBy">Created By</label>
+      <input id="new_card_createdBy" type="text" ng-model="new_card.createdBy">
+    </div>
+     <div>
+      <label for="new_card_assignedTo">Assigned To</label>
+      <input id="new_card_assignedTo" type="text" ng-model="new_card.assignedTo">
+    </div>
     <div class="commit">
       <button type="button" ng-click="CardService.addCard(new_card); new_card = null">Add Card</button>
     </div>
   </fieldset> -->
-
-<!--   <div>
-    <input type="text" ng-models"myModel">
-  </div>
-  <div>
-    {{myModel}}
-  </div> -->

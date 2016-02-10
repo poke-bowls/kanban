@@ -1,15 +1,19 @@
 * {
   box-sizing: border-box;
-  transition: all 1s ease; }
+  transition: all 1s ease;
+}
 
 .cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center; }
-  .cards .columns {
+  justify-content: center;
+
+  .columns {
     flex: 0 0 33%;
     background-color: cyan;
     width: 200px;
     height: 200px;
     margin: 5px;
-    text-align: center; }
+    text-align: center;
+  }
+}
