@@ -2,26 +2,47 @@
   <div class="columns" id="queue" ng-switch-when="Queue">Queue
     <form ng-submit="submit(card)" method="POST">
       <input type="hidden", name="_method", value="PUT">
-        <br></br>
+        <br>
         <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
+        <br>
         <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
+        <br>
         <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
+        <br>
         <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
-        <br></br>
+        <br><br>
         <input type="submit" value="Edit">
     </form>
   </div>
-  <div class="columns" id="in_progress" ng-switch-when="In Progress">In-Progress
-    <h4 class="card_title">{{ card.title }}</h4>
-    <p class="card_priority">{{ card.priority }}</p>
-    <p class="card_createdBy">{{ card.createdBy }}</p>
-    <p class="card_assignedTo">{{ card.assignedTo }}</p>
+  <div class="columns" id="in_progress" ng-switch-when="In Progress">In Progress
+   <form ng-submit="submit(card)" method="POST">
+      <input type="hidden", name="_method", value="PUT">
+        <br>
+        <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
+        <br>
+        <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
+        <br>
+        <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
+        <br>
+        <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
+        <br><br>
+        <input type="submit" value="Edit">
+    </form>
   </div>
   <div class="columns" id="done" ng-switch-when="Done">Done
-    <h4 class="card_title">{{ card.title }}</h4>
-    <p class="card_priority">{{ card.priority }}</p>
-    <p class="card_createdBy">{{ card.createdBy }}</p>
-    <p class="card_assignedTo">{{ card.assignedTo }}</p>
+   <form ng-submit="submit(card)" method="POST">
+      <input type="hidden", name="_method", value="PUT">
+        <br>
+        <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
+        <br>
+        <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
+        <br>
+        <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
+        <br>
+        <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
+        <br><br>
+        <input type="submit" value="Edit">
+    </form>
   </div>
 </div>
 

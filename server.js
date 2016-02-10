@@ -4,9 +4,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const Cards = require('./db/cards.js');
 const PORT = process.env.PORT || 3000;
 
-//add sequelize
+//add sequelize to talk to database! Postgres, SQL
 
 app.use(express.static('./public'));
 
@@ -46,23 +47,27 @@ app.use(methodOverride(function ( req, res ){
     ];
 
 app.get('/api/cards', function (req, res){
-    // Cards.all()
-    //   .then(function(users){
-     res.json(cards);
-      // });
+    Cards.getAll()
+      .then(function(cards){
+        res.json(cards);
+      });
 });
 
 app.post('/new', function (req, res) {
-  var block = req.body
-  cards.push(block);
-  res.json(block);
+  var newCard = req.body;
+  // cards.push(block);
+  Cards.add(newCard)
+    .then(function(data){
+      res.json(data);
+    })
+    .catch(function(err){
+      console.log(err);
+    });
 });
 
 app.put('/edit', function (req, res){
   console.log('TEST', req.body);
 });
-
-// cards is an array of objects
 
 // app.get('*', function (req, res){
 //   res.sendFile('/public/index.html', { root : __dirname });
