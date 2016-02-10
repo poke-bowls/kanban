@@ -19,32 +19,6 @@ app.use(methodOverride(function ( req, res ){
   return method;
 }));
 
-    var cards = [
-      {
-        id : 1,
-        title : 'Kanban Project',
-        priority : 'High',
-        createdBy : 'Brad Da Bishop',
-        assignedTo : 'B-rad',
-        status : "Done"
-      },
-      {
-        id : 2,
-        title : 'This Project',
-        priority : 'Low',
-        createdBy : 'Poopoopants',
-        assignedTo : 'Poop',
-        status : "Queue"
-      },
-      {
-        id : 3,
-        title : 'Another Project',
-        priority : 'Medium',
-        createdBy : 'The Colonel',
-        assignedTo : 'The Colonel',
-        status : "In Progress"
-      }
-    ];
 
 app.get('/api/cards', function (req, res){
     Cards.getAll()
@@ -66,7 +40,13 @@ app.post('/new', function (req, res) {
 });
 
 app.put('/edit', function (req, res){
-  console.log('TEST', req.body);
+  Cards.editById(req.body, req.body._id)
+    .then(function(data) {
+      res.json(data);
+    })
+    .catch(function(err){
+      console.log(err);
+    });
 });
 
 // app.get('*', function (req, res){

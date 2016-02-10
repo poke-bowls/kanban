@@ -1,6 +1,6 @@
 <div class="cards" ng-repeat='card in Cards' | ng-switch on= "card.status">
   <div class="columns" id="queue" ng-switch-when="Queue">Queue
-    <form ng-submit="submit(card)" method="POST">
+    <form ng-submit="submitEdit(card)" method="POST">
       <input type="hidden", name="_method", value="PUT">
         <br>
         <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
@@ -15,7 +15,7 @@
     </form>
   </div>
   <div class="columns" id="in_progress" ng-switch-when="In Progress">In Progress
-   <form ng-submit="submit(card)" method="POST">
+   <form ng-submit="submitEdit(card)" method="POST">
       <input type="hidden", name="_method", value="PUT">
         <br>
         <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
@@ -30,7 +30,7 @@
     </form>
   </div>
   <div class="columns" id="done" ng-switch-when="Done">Done
-   <form ng-submit="submit(card)" method="POST">
+   <form ng-submit="submitEdit(card)" method="POST">
       <input type="hidden", name="_method", value="PUT">
         <br>
         <input class="card_title" value="{{card.title}}" ng-model="card.title">Title

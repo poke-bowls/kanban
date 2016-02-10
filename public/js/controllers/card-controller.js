@@ -14,9 +14,11 @@ angular.module('myApp')
       $scope.Cards.push(data.data);
     });
   };
-  $scope.submit = function(card) {
+  $scope.submitEdit = function(card) {
     CardService.editCard(card).then(function(data){
-      $scope.Cards.push(data.data);
+      CardService.getCards().success(function(data){
+        $scope.Cards = data;
+      });
     });
   };
 }]);
