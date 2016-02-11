@@ -1,7 +1,7 @@
 <div class="cards">
   <div class="statusmain"><p>Queue</p>
-    <div class="statuscontent" ng-repeat='card in Cards' | ng-switch on= "card.status">
-      <div class="columns" id="queue" ng-switch-when="Queue">
+    <div class="statuscontent" ng-repeat='card in Cards | statusCheckingFilter:0 | orderBy: "priority"'>
+      <div class="columns" id="queue">
         <form ng-submit="submitEdit(card)">
           <br>
           <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
@@ -17,13 +17,16 @@
         <form ng-submit="delCard(card)">
           <input type="submit" value="Delete">
         </form>
+        <form ng-submit="rightButton(card)">
+          <input type="submit" value="Move Forward">
+        </form>
       </div>
     </div>
   </div>
 
   <div class="statusmain"><p>In Progress</p>
-    <div class="statuscontent" ng-repeat='card in Cards' | ng-switch on= "card.status">
-      <div class="columns" id="in_progress" ng-switch-when="In Progress">
+    <div class="statuscontent" ng-repeat='card in Cards | statusCheckingFilter:1'>
+      <div class="columns" id="in_progress">
        <form ng-submit="submitEdit(card)">
           <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
           <br>
@@ -38,13 +41,16 @@
         <form ng-submit="delCard(card)">
           <input type="submit" value="Delete">
         </form>
+        <form ng-submit="rightButton(card)">
+          <input type="submit" value="Move Forward">
+        </form>
       </div>
     </div>
   </div>
 
   <div class="statusmain"><p>Done</p>
-    <div class="statuscontent" ng-repeat='card in Cards' | ng-switch on= "card.status">
-      <div class="columns" id="done" ng-switch-when="Done">
+    <div class="statuscontent" ng-repeat='card in Cards | statusCheckingFilter:2'>
+      <div class="columns" id="done">
        <form ng-submit="submitEdit(card)">
           <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
           <br>
@@ -58,6 +64,9 @@
         </form>
         <form ng-submit="delCard(card)" >
           <input type="submit" value="Delete">
+        </form>
+        <form ng-submit="rightButton(card)">
+          <input type="submit" value="Move Forward">
         </form>
       </div>
     </div>
@@ -93,10 +102,10 @@
       <label for="assignedTo">Assigned To</label>
       <input id="new_card_assignedTo" type="text" ng-model="card.assignedTo">
     </div>
-    <div>
+    <!-- <div>
       <label for="status">Status</label>
       <input id="new_card_assignedTo" type="text" ng-model="card.status">
-    </div>
+    </div> -->
     <div class="commit">
       <button type="button" ng-click="postButton(card)">Add Card</button>
     </div>
