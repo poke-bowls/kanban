@@ -11,13 +11,21 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('./public'));
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ extended : false }));
 
-app.use(methodOverride(function ( req, res ){
-  var method = req.body._method;
-  delete req.body._method;
-  return method;
-}));
+// app.use(methodOverride(function ( req, res ){
+//   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+//     // look in urlencoded POST bodies and delete it
+//     var method = req.body._method;
+//     delete req.body._method;
+//     return method;
+//   }
+
+  // console.log("at method method-override", req);
+  // var method = req.body._method;
+  // delete req.body._method;
+  // return method;
+// }));
 
 
 app.get('/api/cards', function (req, res){
@@ -45,6 +53,16 @@ app.put('/edit', function (req, res){
       res.json(data);
     })
     .catch(function(err){
+      console.log(err);
+    });
+});
+
+app.delete('/delete/:id', function (req, res) {
+  Cards.deleteCard(req.params.id)
+  .then(function(data) {
+    res.json(data);
+  })
+  .catch(function(err){
       console.log(err);
     });
 });

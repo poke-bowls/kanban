@@ -13,7 +13,12 @@
         <br><br>
         <input type="submit" value="Edit">
     </form>
+    <form ng-submit="delCard(card)" method="POST">
+      <input type="hidden", name="_method", value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
   </div>
+
   <div class="columns" id="in_progress" ng-switch-when="In Progress">In Progress
    <form ng-submit="submitEdit(card)" method="POST">
       <input type="hidden", name="_method", value="PUT">
@@ -28,7 +33,12 @@
         <br><br>
         <input type="submit" value="Edit">
     </form>
+    <form ng-submit="delCard(card)" method="POST">
+      <input type="hidden", name="_method", value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
   </div>
+
   <div class="columns" id="done" ng-switch-when="Done">Done
    <form ng-submit="submitEdit(card)" method="POST">
       <input type="hidden", name="_method", value="PUT">
@@ -42,6 +52,10 @@
         <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
         <br><br>
         <input type="submit" value="Edit">
+    </form>
+    <form ng-submit="delCard(card)" >
+<!--       <input type="hidden", name="_method", value="DELETE"> -->
+      <input type="submit" value="Delete">
     </form>
   </div>
 </div>
@@ -81,6 +95,6 @@
       <input id="new_card_assignedTo" type="text" ng-model="card.status">
     </div>
     <div class="commit">
-      <button type="button" ng-click="clickButton(card)">Add Card</button>
+      <button type="button" ng-click="postButton(card)">Add Card</button>
     </div>
   </fieldset>
