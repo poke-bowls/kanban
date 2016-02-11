@@ -7,7 +7,7 @@ var cardSchema = mongoose.Schema({
   priority : String,
   createdBy: String,
   assignedTo: String,
-  status: String
+  status: Number
 });
 
 var Card = mongoose.model('Card', cardSchema);

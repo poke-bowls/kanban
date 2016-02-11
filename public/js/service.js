@@ -10,6 +10,7 @@ angular.module('myApp')
 
     };
     this.addCard = function(card){
+      card.status=0;
       return $http.post('/new', card);
       // .then(function(data) {
       // console.log( 'Hooowwwdy',data);

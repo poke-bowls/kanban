@@ -28,4 +28,17 @@ angular.module('myApp')
       });
     });
   };
+  $scope.rightButton = function(card) {
+    if(card.status === 2) {
+      card.status=2;
+    } else {
+      card.status = card.status + 1;
+    }
+    CardService.editCard(card).then(function(data){
+      CardService.getCards().success(function(data){
+        $scope.Cards = data;
+      });
+    });
+  };
+
 }]);
