@@ -23,7 +23,6 @@ angular.module('myApp')
   };
   $scope.delCard = function(card) {
     CardService.deleteCard(card).then(function(data) {
-      console.log('Herre?', data);
       CardService.getCards().success(function(data){
         $scope.Cards = data;
       });

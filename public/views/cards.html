@@ -1,65 +1,68 @@
-<div class="cards" ng-repeat='card in Cards' | ng-switch on= "card.status">
-  <div class="columns" id="queue" ng-switch-when="Queue">Queue
-    <form ng-submit="submitEdit(card)" method="POST">
-      <input type="hidden", name="_method", value="PUT">
-        <br>
-        <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
-        <br>
-        <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
-        <br>
-        <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
-        <br>
-        <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
-        <br><br>
-        <input type="submit" value="Edit">
-    </form>
-    <form ng-submit="delCard(card)" method="POST">
-      <input type="hidden", name="_method", value="DELETE">
-      <input type="submit" value="Delete">
-    </form>
+<div class="cards">
+  <div class="statusmain"><p>Queue</p>
+    <div class="statuscontent" ng-repeat='card in Cards' | ng-switch on= "card.status">
+      <div class="columns" id="queue" ng-switch-when="Queue">
+        <form ng-submit="submitEdit(card)">
+          <br>
+          <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
+          <br>
+          <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
+          <br>
+          <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
+          <br>
+          <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
+          <br><br>
+          <input type="submit" value="Edit">
+        </form>
+        <form ng-submit="delCard(card)">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
   </div>
 
-  <div class="columns" id="in_progress" ng-switch-when="In Progress">In Progress
-   <form ng-submit="submitEdit(card)" method="POST">
-      <input type="hidden", name="_method", value="PUT">
-        <br>
-        <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
-        <br>
-        <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
-        <br>
-        <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
-        <br>
-        <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
-        <br><br>
-        <input type="submit" value="Edit">
-    </form>
-    <form ng-submit="delCard(card)" method="POST">
-      <input type="hidden", name="_method", value="DELETE">
-      <input type="submit" value="Delete">
-    </form>
+  <div class="statusmain"><p>In Progress</p>
+    <div class="statuscontent" ng-repeat='card in Cards' | ng-switch on= "card.status">
+      <div class="columns" id="in_progress" ng-switch-when="In Progress">
+       <form ng-submit="submitEdit(card)">
+          <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
+          <br>
+          <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
+          <br>
+          <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
+          <br>
+          <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
+          <br><br>
+          <input type="submit" value="Edit">
+        </form>
+        <form ng-submit="delCard(card)">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
   </div>
 
-  <div class="columns" id="done" ng-switch-when="Done">Done
-   <form ng-submit="submitEdit(card)" method="POST">
-      <input type="hidden", name="_method", value="PUT">
-        <br>
-        <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
-        <br>
-        <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
-        <br>
-        <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
-        <br>
-        <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
-        <br><br>
-        <input type="submit" value="Edit">
-    </form>
-    <form ng-submit="delCard(card)" >
-<!--       <input type="hidden", name="_method", value="DELETE"> -->
-      <input type="submit" value="Delete">
-    </form>
+  <div class="statusmain"><p>Done</p>
+    <div class="statuscontent" ng-repeat='card in Cards' | ng-switch on= "card.status">
+      <div class="columns" id="done" ng-switch-when="Done">
+       <form ng-submit="submitEdit(card)">
+          <input class="card_title" value="{{card.title}}" ng-model="card.title">Title
+          <br>
+          <input class="card_priority" value="{{card.priority}}" ng-model="card.priority">Priority
+          <br>
+          <input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">Created By
+          <br>
+          <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">Assigned To
+          <br><br>
+          <input type="submit" value="Edit">
+        </form>
+        <form ng-submit="delCard(card)" >
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-
   <!-- <h4>CardService</h4>
   <div class="search_card_title_container">
     <label for="search_card_title">Search Card Status:</label>

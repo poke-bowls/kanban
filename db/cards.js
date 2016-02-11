@@ -13,7 +13,7 @@ var cardSchema = mongoose.Schema({
 var Card = mongoose.model('Card', cardSchema);
 
   function _add(cardObject) {
-    console.log('here', cardObject);
+    console.log('NewCard', cardObject);
 
     return new Card(cardObject).save();
   }

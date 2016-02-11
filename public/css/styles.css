@@ -6,10 +6,10 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
-  .cards .columns {
-    flex: 0 0 33%;
-    background-color: cyan;
-    width: 200px;
-    height: 200px;
-    margin: 5px;
-    text-align: center; }
+  .cards .statusmain {
+    display: inline-block;
+    width: 250px; }
+    .cards .statusmain .columns {
+      width: 200px;
+      height: 200px;
+      background-color: cyan; }

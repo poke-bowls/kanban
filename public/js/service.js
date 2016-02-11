@@ -21,6 +21,5 @@ angular.module('myApp')
 
     this.deleteCard = function(card) {
       return $http.delete('/delete/' + card._id);
-
     };
   }]);
