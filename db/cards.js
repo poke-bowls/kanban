@@ -5,8 +5,8 @@ var mongoose = require('mongoose');
 var cardSchema = mongoose.Schema({
   title : String,
   priority : String,
-  createdBy: String,
-  assignedTo: String,
+  createdBy: Object,
+  assignedTo: Object,
   status: Number
 });
 
