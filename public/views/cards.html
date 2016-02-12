@@ -39,9 +39,14 @@
         <form ng-submit="delCard(card)">
           <input type="submit" value="Delete" class="button">
         </form>
-        <form ng-submit="rightButton(card)">
-          <input type="submit" value="-->" class="button">
-        </form>
+        <div class="arrowHolder">
+          <span id="left">
+            <button ng-click="leftButton(card)" type="submit" id="leftButt"></button>
+          </span>
+          <span id="right">
+            <button ng-click="rightButton(card)" type="submit" id="rightButt"></button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -65,9 +70,14 @@
         <form ng-submit="delCard(card)">
           <input type="submit" value="Delete" class="button">
         </form>
-        <form ng-submit="rightButton(card)">
-          <input type="submit" value="-->" class="button">
-        </form>
+        <div class="arrowHolder">
+          <span id="left">
+            <button ng-click="leftButton(card)" type="submit" id="leftButt"></button>
+          </span>
+          <span id="right">
+            <button ng-click="rightButton(card)" type="submit" id="rightButt"></button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -88,17 +98,21 @@
           <br><br>
           <input type="submit" value="Edit" class="button">
         </form>
-        <form ng-submit="delCard(card)" >
+        <form ng-submit="delCard(card)">
           <input type="submit" value="Delete" class="button">
         </form>
-        <form ng-submit="rightButton(card)">
-          <input type="submit" value="-->" class="button">
-        </form>
+        <div class="arrowHolder">
+          <span id="left">
+            <button ng-click="leftButton(card)" type="submit" id="leftButt"></button>
+          </span>
+          <span id="right">
+            <button ng-click="rightButton(card)" type="submit" id="rightButt"></button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
   <!-- <h4>CardService</h4>
   <div class="search_card_title_container">
     <label for="search_card_title">Search Card Status:</label>

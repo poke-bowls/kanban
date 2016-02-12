@@ -27,7 +27,8 @@ body {
     .cards .statusmain .statuscontent {
       display: flex;
       flex-flow: row wrap;
-      justify-content: center; }
+      justify-content: center;
+      max-height: 500px; }
     .cards .statusmain .columns {
       flex: 0 0 50%;
       width: 250px;
@@ -77,3 +78,22 @@ body {
 .button:active {
   position: relative;
   top: 1px; }
+
+.arrowHolder {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap; }
+
+#leftButt {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  background: url("./../assets/blueLeftArrow.png") no-repeat; }
+
+#rightButt {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  background: url("./../assets/blueRightArrow.png") no-repeat; }

@@ -40,5 +40,17 @@ angular.module('myApp')
       });
     });
   };
+  $scope.leftButton = function(card) {
+    if(card.status === 0) {
+      card.status=0;
+    } else {
+      card.status = card.status - 1;
+    }
+    CardService.editCard(card).then(function(data){
+      CardService.getCards().success(function(data){
+        $scope.Cards = data;
+      });
+    });
+  };
 
 }]);
