@@ -9,4 +9,7 @@ angular.module('myApp')
     this.login = function(user) {
       return $http.post('/login', user);
     };
+    // this.isAuthenticated = function() {
+    //   return $http.get('http://localhost:3000/api/authenticate');
+    // };
   }]);

@@ -28,21 +28,7 @@ passport.deserializeUser(function(user, done){
   return done(null, user);
 });
 
-passport.use(new LocalStrategy({
-  passReqToCallback: true
-  },
-  function(req, username, password, done){
-    User.findUser({
-      "username": username
-    })
-    .then(function(user){
-      console.log('Hi', user);
-      if(!user){
-        return done(null, false);
-      }
-      return done(null, user);
-    });
-}));
+
 
 app.use(express.static('./public'));
 
@@ -54,13 +40,6 @@ app.get('/api/cards', function (req, res){
       .then(function(cards){
         res.json(cards);
       });
-});
-
-app.get('/api/users', function (req, res){
-  Users.getAll()
-    .then(function(users){
-      res.json(users);
-    });
 });
 
 app.post('/new', function (req, res) {
@@ -94,20 +73,51 @@ app.delete('/delete/:id', function (req, res) {
     });
 });
 
-app.get('/login', function(req, res) {
-});
-
-app.post('/login', passport.authenticate('local', {
-  succesRedirect : '/',
-  failureRedirect : '/login'
+passport.use(new LocalStrategy({
+  passReqToCallback: true
+  },
+  function(req, username, password, done){
+    var useName = req.body.username;
+    var passW = req.body.password;
+    User.findUser(useName, password)
+    .then(function(user){
+      if(!user){
+        return done(null, false);
+      }
+      return done(null, user);
+    });
 }));
 
-function isAuthenticated(req, res, next) {
+function userAuthentication(req, res, next) {
   if(!req.isAuthenticated()) {
-    return res.redirect('/gallery/login');
+    return res.send(401);
   }
   return next();
 }
+
+app.get('/api/authenticate', function(req, res){
+  console.log('Im at authenticate route on server');
+  res.send(req.isAuthenticated() ? req.user : '0');
+});
+
+app.get('/api/users', userAuthentication, function (req, res){
+  Users.getAll()
+    .then(function(users){
+      res.json(users);
+    });
+});
+
+
+
+app.post('/login', passport.authenticate('local'), function(req, res) {
+  res.send(req.user);
+});
+
+app.post('/logout', function(req, res) {
+  req.logout();
+  res.send(200);
+});
+
 
 app.listen(PORT, function(){
   process.stdout.write(`server listening on port ${PORT}`);

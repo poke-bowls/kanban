@@ -97,3 +97,8 @@ body {
   border-radius: 50%;
   justify-content: center;
   background: url("./../assets/blueRightArrow.png") no-repeat; }
+
+.error {
+  font-family: 'Dosis';
+  font-weight: bold;
+  color: red; }
