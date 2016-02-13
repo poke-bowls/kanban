@@ -113,7 +113,7 @@ app.get('/api/authenticate', function(req, res){
 });
 
 app.get('/api/users', userAuthentication, function (req, res){
-  Users.getAll()
+  User.getAll()
     .then(function(users){
       res.json(users);
     });

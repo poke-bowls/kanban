@@ -10,13 +10,16 @@
           <label for="priority">Priority:</label>
           <input id="new_card_priority" type="text" ng-model="card.priority">
         </div>
-        <div>
-          <label for="createdBy">Created By:</label>
-          <input id="new_card_createdBy" type="text" ng-model="card.createdBy">
+        <div ng-controller="UserController">
+          <label for="createdBy">Created By: {{user_full_name}}</label>
         </div>
-        <div>
-          <label for="assignedTo">Assigned To:</label>
-          <input id="new_card_assignedTo" type="text" ng-model="card.assignedTo">
+        <div ng-controller="UserController">
+          <form>
+            <label for="assignedTo">Assigned To:</label>
+            <select name="assignedTo" id="assignedTo" ng-model="user.first_name" "user.last_name">
+              <option ng-repeat="user in Users"  value="{{user.first_name}} {{user.last_name}}">{{user.first_name}} {{user.last_name}}</option>
+            </select>
+          </form>
         </div>
         <div class="commit">
           <button type="button" ng-click="postButton(card)" class="button">Add Card</button>
@@ -36,13 +39,13 @@
           <br><br>
           <input type="submit" value="Edit" class="button">
         </form>
-        <form ng-submit="delCard(card)">
-          <input type="submit" value="Delete" class="button">
-        </form>
         <div class="arrowHolder">
           <span id="left">
             <button ng-click="leftButton(card)" type="submit" id="leftButt"></button>
           </span>
+          <form ng-submit="delCard(card)">
+            <input type="submit" value="Delete" class="button">
+          </form>
           <span id="right">
             <button ng-click="rightButton(card)" type="submit" id="rightButt"></button>
           </span>
@@ -67,13 +70,13 @@
           <br><br>
           <input type="submit" value="Edit" class="button">
         </form>
-        <form ng-submit="delCard(card)">
-          <input type="submit" value="Delete" class="button">
-        </form>
         <div class="arrowHolder">
           <span id="left">
             <button ng-click="leftButton(card)" type="submit" id="leftButt"></button>
           </span>
+          <form ng-submit="delCard(card)">
+            <input type="submit" value="Delete" class="button">
+          </form>
           <span id="right">
             <button ng-click="rightButton(card)" type="submit" id="rightButt"></button>
           </span>
@@ -98,13 +101,13 @@
           <br><br>
           <input type="submit" value="Edit" class="button">
         </form>
-        <form ng-submit="delCard(card)">
-          <input type="submit" value="Delete" class="button">
-        </form>
         <div class="arrowHolder">
           <span id="left">
             <button ng-click="leftButton(card)" type="submit" id="leftButt"></button>
           </span>
+          <form ng-submit="delCard(card)">
+            <input type="submit" value="Delete" class="button">
+          </form>
           <span id="right">
             <button ng-click="rightButton(card)" type="submit" id="rightButt"></button>
           </span>

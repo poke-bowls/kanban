@@ -17,6 +17,11 @@ module.exports = (function () {
     return new User(userObject).save();
   }
 
+  function _getAll() {
+    return User.find();
+  }
+
+
   function _deleteUser(requestId) {
     return User.find({_id: requestId}).remove().exec();
   }
@@ -29,6 +34,7 @@ module.exports = (function () {
 
   return {
     add: _add,
+    getAll: _getAll,
     delete: _deleteUser,
     findUser: _findUser
   };

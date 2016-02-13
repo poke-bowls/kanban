@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute']);
+angular.module('myApp', ['ngRoute', 'ngStorage']);
 
 var myApp = angular.module('myApp');
 
@@ -49,6 +49,8 @@ myApp
     });
 }])
 
-.run(function(){
+.run(['$rootScope', '$localStorage', function($rootScope, $localStorage){
   //initialize
-});
+  ////must create something to set to !loggedin if they log out or after some period of time
+  $rootScope.user_full_name = $localStorage.user_full_name  || '!loggedin';
+}]);
