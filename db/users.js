@@ -21,10 +21,9 @@ module.exports = (function () {
     return User.find({_id: requestId}).remove().exec();
   }
 
-  function _findUser(useName, passW) {
+  function _findUser(useName) {
     return User.findOne({
-      "username" : useName,
-      "password" : passW
+      "username" : useName
     });
   }
 
