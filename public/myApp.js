@@ -18,7 +18,6 @@ var checkedLoggedIn=function($q, $timeout, $http, $location, $rootScope) {
         $rootScope.message= 'You need to log in.';
         deferred.reject();
         $location.url('/login');
-
       }
     });
     return deferred.promise;

@@ -107,17 +107,29 @@ app.get('/api/users', userAuthentication, function (req, res){
     });
 });
 
-
-
 app.post('/login', passport.authenticate('local'), function(req, res) {
   res.send(req.user);
+});
+
+app.post('/register', function(req, res){
+  User.add(req.user)
+    .then(function(user){
+      console.log(user);
+      req.login(user, function(err) {
+        if(err) {
+          return next(err);
+        }
+        return res.json({
+          success : true
+        });
+      });
+    });
 });
 
 app.post('/logout', function(req, res) {
   req.logout();
   res.send(200);
 });
-
 
 app.listen(PORT, function(){
   process.stdout.write(`server listening on port ${PORT}`);
