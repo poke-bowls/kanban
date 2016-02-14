@@ -16,6 +16,12 @@ angular.module('myApp')
         return false;
       }
       UserService.register($scope.user).success(function(result){
+        $rootScope.creator_user = result;
+        $rootScope.user_first_name = result.first_name;
+        $rootScope.user_last_name = result.last_name;
+        $rootScope.creator_user = result;
+        $localStorage.creator_user = $rootScope.creator_user;
+        $rootScope.user_full_name = result.first_name + " " + result.last_name;
         $location.url('/');
       }).error(function(error){
         $scope.error = "Please try again";
@@ -25,10 +31,10 @@ angular.module('myApp')
     $scope.login = function(){
       UserService.login($scope.user).success(function(result) {
         $rootScope.creator_user = result;
-        $localStorage.creator_user = $rootScope.creator_user;
         $rootScope.user_first_name = result.first_name;
         $rootScope.user_last_name = result.last_name;
         $rootScope.user_full_name = result.first_name + " " + result.last_name;
+        $localStorage.creator_user = $rootScope.creator_user;
         $localStorage.user_full_name = $rootScope.user_full_name;
         $location.url('/');
       }).error(function(error) {

@@ -155,9 +155,7 @@ app.post('/register', function(req, res){
         if(err) {
           return next(err);
         }
-        return res.json({
-          success : true
-        });
+        return res.json(user);
       });
     });
   });

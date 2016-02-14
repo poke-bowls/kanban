@@ -21,7 +21,6 @@ module.exports = (function () {
     return User.find();
   }
 
-
   function _deleteUser(requestId) {
     return User.find({_id: requestId}).remove().exec();
   }
