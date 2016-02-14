@@ -12,7 +12,4 @@ angular.module('myApp')
     this.register = function(user) {
       return $http.post('/register', user);
     };
-    // this.isAuthenticated = function() {
-    //   return $http.get('http://localhost:3000/api/authenticate');
-    // };
   }]);

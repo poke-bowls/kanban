@@ -2,15 +2,25 @@
 "use strict";
 
 angular.module('myApp')
-.controller('CardController', ['$scope', 'CardService', function($scope, CardService){
+.controller('CardController', ['$scope', 'CardService', '$rootScope', 'UserService', function($scope, CardService, $rootScope, UserService){
   $scope.Cards = [];
+  $scope.card = {
+    createdBy : $rootScope.creator_user
+  };
   $scope.CardService = CardService;
   CardService.getCards().success(function(data){
     $scope.Cards = data;
   });
 
+  $scope.Users = [];
+    $scope.UserService = UserService;
+    UserService.getUsers().success(function(data) {
+      $scope.Users = data;
+    });
+
   $scope.postButton=function(card) {
     CardService.addCard(card).then(function(data) {
+      $scope.add_card = false;
       $scope.Cards.push(data.data);
     });
   };

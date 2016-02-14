@@ -42,6 +42,7 @@ app.get('/api/cards', function (req, res){
 
 app.post('/new', function (req, res) {
   var newCard = req.body;
+  console.log("at server post new card", newCard);
   Cards.add(newCard)
     .then(function(data){
       res.json(data);

@@ -50,7 +50,11 @@ myApp
 }])
 
 .run(['$rootScope', '$localStorage', function($rootScope, $localStorage){
+  if($localStorage.hasOwnProperty("creator_user")) {
+    console.log($localStorage.creator_user);
+  }
   //initialize
   ////must create something to set to !loggedin if they log out or after some period of time
   $rootScope.user_full_name = $localStorage.user_full_name  || '!loggedin';
+  $rootScope.creator_user = $localStorage.creator_user || '!loggedin';
 }]);

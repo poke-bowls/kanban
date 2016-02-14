@@ -1,30 +1,36 @@
 <div class="cards">
   <div class="statusmain">
     <p>Queue</p>
-      <fieldset class="columns">
-        <div>
-          <label for="title">Title:</label>
-          <input id="new_card_title" type="text" ng-model="card.title">
-        </div>
-        <div>
-          <label for="priority">Priority:</label>
-          <input id="new_card_priority" type="text" ng-model="card.priority">
-        </div>
-        <div ng-controller="UserController">
-          <label for="createdBy">Created By: {{user_full_name}}</label>
-        </div>
-        <div ng-controller="UserController">
-          <form>
-            <label for="assignedTo">Assigned To:</label>
-            <select name="assignedTo" id="assignedTo" ng-model="user.first_name" "user.last_name">
-              <option ng-repeat="user in Users"  value="{{user.first_name}} {{user.last_name}}">{{user.first_name}} {{user.last_name}}</option>
-            </select>
-          </form>
-        </div>
-        <div class="commit">
-          <button type="button" ng-click="postButton(card)" class="button">Add Card</button>
-        </div>
-      </fieldset>
+      <div>
+        <button ng-class="{ 'hidden' : add_card}" class="button" type="button" ng-click="add_card = !add_card">New Card</button>
+          <div id="hideMe" ng-class="{ 'hidden' : ! add_card}">
+            <fieldset class="columns">
+              <div>
+                <label for="title">Title:</label>
+                <input id="new_card_title" type="text" ng-model="card.title">
+              </div>
+              <div>
+                <label for="priority">Priority:</label>
+                <input id="new_card_priority" type="text" ng-model="card.priority">
+              </div>
+              <div>
+                <label for="createdBy">Created By: {{card.createdBy.first_name}} {{card.createdBy.last_name}}</label>
+                <!-- <input type="hidden" id="createdBy" value="{{creator_user}}" ng-model="card.createdBy"> -->
+              </div>
+              <div >
+                <form>
+                  <label for="assignedTo">Assigned To:</label>
+                  <select name="assignedTo" id="assignedTo" ng-model="user.first_name" "user.last_name">
+                    <option ng-repeat="user in Users"  value="{{user.first_name}} {{user.last_name}}">{{user.first_name}} {{user.last_name}}</option>
+                  </select>
+                </form>
+              </div>
+              <div class="commit">
+                <button type="button" ng-click="postButton(card)" class="button">Add Card</button>
+              </div>
+            </fieldset>
+          </div>
+      </div>
     <div class="statuscontent" ng-repeat='card in Cards | statusCheckingFilter:0 | orderBy: "priority"'>
       <div class="columns" id="queue">
         <form ng-submit="submitEdit(card)">
@@ -33,7 +39,7 @@
           <br>
           Priority:<input class="card_priority" value="{{card.priority}}" ng-model="card.priority">
           <br>
-          Created By:<input class="card_createdBy" value="{{card.createdBy}}" ng-model="card.createdBy">
+          Created By: <label class="card_createdBy">{{card.createdBy.first_name}} {{card.createdBy.last_name}}</label>
           <br>
           Assigned To:<input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">
           <br><br>

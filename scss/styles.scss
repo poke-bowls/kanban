@@ -14,6 +14,18 @@ body {
   justify-content: center;
 }
 
+#hideMe {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: hidden;
+  justify-content: center;
+}
+
+#hideMe.hidden,
+.statusmain .button.hidden {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: black;
