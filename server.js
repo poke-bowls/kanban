@@ -168,7 +168,9 @@ app.post('/register', function(req, res){
 
 app.post('/logout', function(req, res) {
   req.logout();
-  res.send(200);
+  res.json({
+    success : true
+  });
 });
 
 app.listen(PORT, function(){

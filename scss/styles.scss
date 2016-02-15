@@ -148,3 +148,12 @@ flex-flow: row wrap;
   color: red;
 
 }
+
+#logout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#logoutButt {
+  margin-right: 30px;
+}

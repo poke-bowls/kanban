@@ -12,4 +12,7 @@ angular.module('myApp')
     this.register = function(user) {
       return $http.post('/register', user);
     };
+    this.logout = function() {
+      return $http.post('/logout');
+    };
   }]);

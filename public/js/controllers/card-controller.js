@@ -2,7 +2,7 @@
 "use strict";
 
 angular.module('myApp')
-.controller('CardController', ['$scope', 'CardService', '$rootScope', 'UserService', function($scope, CardService, $rootScope, UserService){
+.controller('CardController', ['$scope', 'CardService', '$rootScope', 'UserService', '$location', '$localStorage', function($scope, CardService, $rootScope, UserService, $location, $localStorage){
   $scope.Cards = [];
   $scope.card = {
     createdBy : $rootScope.creator_user
@@ -62,5 +62,13 @@ angular.module('myApp')
       });
     });
   };
+  $scope.logoutButton = function() {
+    UserService.logout().success(function() {
+      $localStorage.$reset();
+      $location.url('/login');
+    });
+  };
+
+
 
 }]);

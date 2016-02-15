@@ -116,3 +116,10 @@ a {
   font-family: 'Dosis';
   font-weight: bold;
   color: red; }
+
+#logout {
+  display: flex;
+  justify-content: flex-end; }
+
+#logoutButt {
+  margin-right: 30px; }
