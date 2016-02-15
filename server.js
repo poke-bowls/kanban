@@ -101,7 +101,6 @@ passport.use(new LocalStrategy({
     });
 }));
 
-
 function userAuthentication(req, res, next) {
   if(!req.isAuthenticated()) {
     return res.send(401);
@@ -160,11 +159,6 @@ app.post('/register', function(req, res){
     });
   });
 });
-
-
-
-
-
 
 app.post('/logout', function(req, res) {
   req.logout();
