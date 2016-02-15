@@ -37,7 +37,10 @@ myApp
     })
     .when('/cards', {
       templateUrl : 'views/cards.html',
-      controller : 'CardController'
+      controller : 'CardController',
+      resolve: {
+        loggedin: checkedLoggedIn
+      }
     })
     .when('/login', {
       templateUrl : 'views/login.html',

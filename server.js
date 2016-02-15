@@ -150,7 +150,7 @@ app.post('/register', function(req, res){
     };
     User.add(userObj)
     .then(function(user){
-      console.log("Register then user", user);
+      console.log("Register then user");
       req.login(user, function(err) {
         if(err) {
           return next(err);
