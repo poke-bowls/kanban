@@ -17,6 +17,11 @@
               <div>
                 <label for="priority">Priority:</label>
                 <input id="new_card_priority" type="text" ng-model="card.priority">
+                <select name="priority" id="priority">
+                  <option value="High"></option>
+                  <option value="Medium"></option>
+                  <option value="Low"></option>
+                </select>
               </div>
               <div>
                 <label for="createdBy">Created By: {{card.createdBy.first_name}} {{card.createdBy.last_name}}</label>
