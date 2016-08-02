@@ -28,7 +28,7 @@
               <div >
                 <form>
                   <label for="assignedTo">Assigned To:</label>
-                  <select name="assignedTo" id="assignedTo" ng-model="user.first_name" "user.last_name">
+                  <select name="assignedTo" id="assignedTo" ng-model="card.assignedTo">
                     <option ng-repeat="user in Users"  value="{{user.first_name}} {{user.last_name}}">{{user.first_name}} {{user.last_name}}</option>
                   </select>
                 </form>
