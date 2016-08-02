@@ -8,7 +8,8 @@ body {
   padding: 0px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%; }
 
 #hideMe {
   display: flex;
@@ -24,6 +25,10 @@ a {
   text-decoration: none;
   color: black; }
 
+.ng-scope {
+  min-width: 100%;
+  background-color: yellow; }
+
 .cards {
   display: flex;
   flex-flow: row wrap;
@@ -31,10 +36,10 @@ a {
   background-color: orange;
   width: 100%; }
   .cards .statusmain {
-    width: 33%;
+    width: 32%;
     text-align: center;
     background-color: black;
-    margin: 1px;
+    margin: 5px;
     border: 5px solid red;
     font-family: 'Dosis';
     font-weight: bold;
@@ -102,17 +107,19 @@ a {
 
 #leftButt {
   border-radius: 55%;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   justify-content: center;
-  background: url("./../assets/blueLeftArrow.png") no-repeat; }
+  background: url("./../assets/blueLeftArrow.png") no-repeat;
+  background-position: center; }
 
 #rightButt {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 55%;
   justify-content: center;
-  background: url("./../assets/blueRightArrow.png") no-repeat; }
+  background: url("./../assets/blueRightArrow.png") no-repeat;
+  background-position: center; }
 
 .error {
   font-family: 'Dosis';
