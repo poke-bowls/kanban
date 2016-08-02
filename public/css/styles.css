@@ -27,9 +27,11 @@ a {
 .cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center; }
+  justify-content: center;
+  background-color: orange;
+  width: 100%; }
   .cards .statusmain {
-    width: 475px;
+    width: 33%;
     text-align: center;
     background-color: black;
     margin: 1px;

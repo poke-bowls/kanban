@@ -35,9 +35,11 @@ a {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  background-color: orange;
+  width: 100%;
 
   .statusmain {
-    width: 475px;
+    width: 33%;
     text-align: center;
     background-color: black;
     margin: 1px;
