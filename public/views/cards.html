@@ -24,7 +24,6 @@
               </div>
               <div>
                 <label for="createdBy">Created By: {{card.createdBy.first_name}} {{card.createdBy.last_name}}</label>
-                <!-- <input type="hidden" id="createdBy" value="{{creator_user}}" ng-model="card.createdBy"> -->
               </div>
               <div >
                 <form>
@@ -55,7 +54,7 @@
           <br>
           Created By: <label class="card_createdBy">{{card.createdBy.first_name}} {{card.createdBy.last_name}}</label>
           <br>
-          Assigned To:<input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedTo">
+          Assigned To:<input class="card_assignedTo" value="{{card.assignedTo.first_name}}" ng-model="card.assignedTo.first_name">
           <br><br>
           <input type="submit" value="Edit" class="button">
         </form>
