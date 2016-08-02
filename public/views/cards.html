@@ -26,12 +26,8 @@
                 <label for="createdBy">Created By: {{card.createdBy.first_name}} {{card.createdBy.last_name}}</label>
               </div>
               <div >
-                <form>
                   <label for="assignedTo">Assigned To:</label>
-                  <select name="assignedTo" id="assignedTo" ng-model="user.first_name" "user.last_name">
-                    <option ng-repeat="user in Users"  value="{{user.first_name}} {{user.last_name}}">{{user.first_name}} {{user.last_name}}</option>
-                  </select>
-                </form>
+                  <input class="card_assignedTo" value="{{card.assignedTo}}" ng-model="card.assignedto">
               </div>
               <div class="commit">
                 <button type="button" ng-click="postButton(card)" class="button">Add Card</button>
