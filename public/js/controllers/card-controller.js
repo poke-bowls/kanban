@@ -69,6 +69,4 @@ angular.module('myApp')
     });
   };
 
-
-
 }]);
