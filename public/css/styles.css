@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis);
 * {
   box-sizing: border-box;
-  transition: all 0.5s ease; }
+  transition: all 1s ease; }
 
 body {
   margin: 0px;
@@ -27,7 +27,8 @@ a {
 
 .ng-scope {
   min-width: 100%;
-  background-color: yellow; }
+  background-color: black;
+  justify-content: center; }
 
 .cards {
   display: flex;
@@ -100,6 +101,20 @@ a {
   position: relative;
   top: 1px; }
 
+.sign-up {
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid white;
+  height: 35px;
+  width: 115px;
+  line-height: 35px;
+  text-align: center; }
+  .sign-up a {
+    color: white; }
+
 .arrowHolder {
   display: flex;
   justify-content: space-between;
@@ -124,7 +139,53 @@ a {
 .error {
   font-family: 'Dosis';
   font-weight: bold;
-  color: red; }
+  color: red;
+  margin: auto;
+  width: 290px;
+  background-color: orange; }
+
+.login {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.banner {
+  width: 100%;
+  text-align: center;
+  background-image: url("./../assets/LargeBoardroom.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 700px; }
+
+.login-content {
+  flex: 0 0 25%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 150px;
+  margin-top: 250px; }
+
+.login-inputs {
+  flex: 0 0 100%;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 25px;
+  color: white; }
+
+.submit-login-button {
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: Helvetica;
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 45px;
+  width: 120px;
+  background-color: green; }
+
+.register {
+  display: block;
+  height: 50px; }
 
 #logout {
   display: flex;

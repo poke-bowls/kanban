@@ -38,7 +38,7 @@ angular.module('myApp')
         $localStorage.user_full_name = $rootScope.user_full_name;
         $location.url('/');
       }).error(function(error) {
-          $scope.error ="Wrong username or password";
+          $scope.error ="Wrong username or password!";
       });
     };
   }]);

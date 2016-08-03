@@ -1,16 +1,25 @@
+
 <div class="login">
-  <form ng-submit="login(user)">
-    <br>
-    Username:<input class="user_title" value="{{user.username}}" ng-model="user.username">
-    <br>
-    Password:<input class="user_assignedTo" value="{{user.password}}" ng-model="user.password"type="password">
-    <br><br>
-    <input type="submit" value="Login" class="button">
-  </form>
-  <br>
-  <div class="error">{{error}}</div>
+  <div class="banner">
+
+    <div class="register">
+      <div class="sign-up"><a href="/#/register">Sign Up Free</a></div>
+    </div>
+
+    <div class="login-content">
+      <div class="login-inputs">
+        <form ng-submit="login(user)">
+          <br>
+          Username: <input class="user_title" value="{{user.username}}" ng-model="user.username">
+          Password: <input class="user_assignedTo" value="{{user.password}}" ng-model="user.password"type="password">
+          <br><br>
+          <div class="submit-login">
+            <input type="submit" value="Login" class="submit-login-button">
+          </div>
+        </form>
+        <div class="error">{{error}}</div>
+      </div>
+    </div>
+
+  </div>
 </div>
-<h4>Click Below to Register!</h4>
-<span>
-  <button class="button"><a href="/#/register">Register</a></button>
-</span>
