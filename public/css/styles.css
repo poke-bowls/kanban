@@ -26,22 +26,23 @@ a {
 
 .header {
   position: absolute;
-  background: transparent;
-  height: 75px;
-  width: 350px;
-  float: left; }
+  background: transparent; }
+
+.logo-container {
+  float: left;
+  width: 100%; }
 
 .logo {
   width: 75px;
   height: 75px;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 30px;
+  margin-top: 15px;
   background: transparent;
   border: 2px solid black;
-  border-radius: 100px; }
+  border-radius: 100px;
+  display: inline-block; }
 
 .triangle {
-  margin-top: 4px;
   margin-left: -27px;
   height: 0;
   width: 0; }
@@ -172,7 +173,11 @@ a {
   height: 35px;
   width: 115px;
   line-height: 35px;
-  text-align: center; }
+  text-align: center;
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 30px;
+  float: right; }
   .sign-up a {
     color: orange; }
 
