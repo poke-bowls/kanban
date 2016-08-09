@@ -1,17 +1,57 @@
-<div class="register">
-  <form ng-submit="register()">
-    <br>
-    Username:<input class="user_title" value="{{user.username}}" ng-model="user.username">
-    <br>
-    First Name:<input class="user_priority" value="{{user.first_name}}" ng-model="user.first_name">
-    <br>
-    Last Name:<input class="user_createdBy" value="{{user.last_name}}" ng-model="user.last_name">
-    <br>
-    Password:<input type="password" class="user_assignedTo" value="{{user.password}}" ng-model="user.password">
-    <br>
-    Email:<input type="email" class="user_assignedTo" value="{{user.email}}" ng-model="user.email">
-    <br><br>
-    <input type="submit" value="Register" class="button">
-  </form>
-  <div class="error">{{error}}</div>
+<div class="header">
+  <div class="logo-container">
+    <a href="/#/">
+      <div class="logo">
+        <div class="logo-letters">
+          <div class="logo-letters down">K</div>
+          <div class="logo-letters down">a</div>
+          <div class="logo-letters down">N</div>
+        </div>
+        <div class="logo-letters across">B N</div>
+        <div class="triangle">
+          <div class="logo-triangle-bottom-left"></div>
+          <div class="logo-triangle-top-right"></div>
+          <div class="logo-triangle-top-right-opacity"></div>
+        </div>
+      </div>
+    </a>
+    <div class="sign-up">
+      <a href="/#/register">Sign Up Free</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="content">
+  <div class="header-message"><h3>Sign Up, It's Free!</h3></div>
+
+  <div class="register">
+    <div class="register-content">
+
+      <form ng-submit="register()">
+        <br>
+        Email
+        <br>
+        <input type="email" class="user_assignedTo" value="{{user.email}}" ng-model="user.email">
+        <br><br>
+        <span>First Name</span>Last Name
+        <br>
+        <input class="user_priority" value="{{user.first_name}}" ng-model="user.first_name">
+        <input class="user_createdBy" value="{{user.last_name}}" ng-model="user.last_name">
+        <br><br>
+        Username
+        <br>
+        <input class="user_title" value="{{user.username}}" ng-model="user.username">
+        <br><br>
+        Password
+        <br>
+        <input type="password" class="user_assignedTo" value="{{user.password}}" ng-model="user.password">
+        <br><br>
+        <input type="submit" value="Register" class="register_submit">
+      </form>
+      <div class="error">{{error}}</div>
+
+    </div>
+  </div>
 </div>
