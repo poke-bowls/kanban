@@ -30,6 +30,12 @@ a {
   background: transparent;
   height: 100px; }
 
+.footer {
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+  background-color: aqua; }
+
 .logo-container {
   float: left;
   width: 100%; }
@@ -172,7 +178,7 @@ a {
   font-size: 12px;
   text-transform: uppercase;
   border-radius: 5px;
-  border: 2px solid orange;
+  border: 2px solid red;
   height: 35px;
   width: 115px;
   line-height: 35px;
@@ -182,10 +188,10 @@ a {
   margin-right: 30px;
   float: right; }
   .sign-up a {
-    color: orange; }
+    color: red; }
 
 .sign-up:hover {
-  background-color: orange; }
+  background-color: red; }
   .sign-up:hover a {
     color: black;
     opacity: 0.5; }
@@ -232,20 +238,51 @@ a {
   background-position: center;
   min-height: 700px; }
 
+.secondary-banner {
+  height: 150px;
+  width: 100%;
+  background-color: aqua;
+  opacity: 0.5;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px; }
+
+.welcome {
+  margin-top: -100px;
+  height: 50px;
+  font-family: 'Raleway';
+  color: white;
+  opacity: 0.7;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+  .welcome h1 {
+    font-size: 55px; }
+  .welcome h4 {
+    color: red;
+    margin-top: -25px;
+    font-weight: 900; }
+
 .login-content {
   flex: 0 0 25%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   height: 150px;
-  margin-top: 250px; }
+  margin-top: 250px;
+  margin-bottom: 150px; }
 
 .login-inputs {
   flex: 0 0 100%;
   font-family: Helvetica;
   font-weight: bold;
   font-size: 25px;
-  color: white; }
+  color: red;
+  margin-top: -115px;
+  margin-bottom: 50px; }
+
+.user_assignedTo,
+.user_title {
+  width: 200px;
+  margin-right: 5px; }
 
 .submit-login-button {
   border: none;
@@ -256,7 +293,7 @@ a {
   text-transform: uppercase;
   height: 45px;
   width: 120px;
-  background-color: green;
+  background-color: red;
   letter-spacing: 2px; }
 
 .register-landing {
