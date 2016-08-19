@@ -160,7 +160,8 @@ a {
   flex-flow: row wrap;
   justify-content: center;
   background-color: orange;
-  width: 100%; }
+  width: 100%;
+  margin-top: 45px; }
   .cards .statusmain {
     width: 32%;
     text-align: center;
@@ -240,15 +241,12 @@ a {
   display: inline-block;
   margin-top: 30px;
   margin-right: 30px;
-  float: right; }
-  .sign-up a {
-    color: red; }
+  float: right;
+  color: red; }
 
 .sign-up:hover {
-  background-color: red; }
-  .sign-up:hover a {
-    color: black;
-    opacity: 0.5; }
+  background-color: red;
+  color: black; }
 
 .arrowHolder {
   display: flex;
@@ -350,39 +348,36 @@ a {
   background-color: red;
   letter-spacing: 2px; }
 
-.register-landing {
-  display: block;
-  height: 50px;
-  float: right;
-  margin-right: 30px;
-  margin-top: 30px; }
-
-#logout {
-  display: flex;
-  justify-content: flex-end; }
-
-#logoutButt {
-  margin-right: 30px; }
-
 .divider {
   width: 100%;
   border-bottom: 1px solid lightgray;
   margin-top: 105px; }
 
+.content-container {
+  font-family: 'Raleway';
+  height: 600px;
+  width: 100%; }
+
 .content {
-  font-family: 'Raleway'; }
+  width: 100%;
+  height: 100%;
+  margin: auto; }
+
+.content-margin {
+  margin: 0px 50px; }
 
 .header-message {
-  margin: 45px;
+  margin: 45px 50px;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-bottom: 1px solid lightgray; }
 
 .register {
-  height: 500px; }
+  height: 500px;
+  float: left; }
 
 .register-content {
-  margin-left: 100px;
+  margin-left: 50px;
   height: 350px;
   width: 350px; }
   .register-content span {
@@ -406,6 +401,19 @@ a {
     text-transform: uppercase;
     height: 45px;
     width: 350px;
-    background-color: green;
+    background-color: red;
     opacity: 1;
     letter-spacing: 1px; }
+
+.small-team {
+  height: 400px;
+  width: 60%;
+  margin-right: 50px;
+  float: right; }
+
+.small-team-image {
+  background-image: url("./../assets/SmallTeam.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 85%;
+  width: 100%; }

@@ -1,12 +1,10 @@
-angular.module('myApp', ['ngRoute', 'ngStorage']);
-
-var myApp = angular.module('myApp');
+var myApp = angular.module('myApp', ['ngRoute', 'ngStorage']);
 
 var checkedLoggedIn=function($q, $timeout, $http, $location, $rootScope) {
   //initiate a new promise
   var deferred =$q.defer();
 
-  //make and AJAX call to check if the user is logged in
+  //make an AJAX call to check if the user is logged in
   $http.get('/api/authenticate')
     .success(function(user) {
       // if Authenticated

@@ -1,3 +1,4 @@
+
 <div class="header">
   <div class="logo-container">
     <a href="/#/">
@@ -15,43 +16,112 @@
         </div>
       </div>
     </a>
-    <div class="sign-up">
-      <a href="/#/register">Sign Up Free</a>
-    </div>
+    <a href="/#/">
+      <div class="sign-up">Login</div>
+    </a>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<div class="content">
-  <div class="header-message"><h3>Sign Up, It's Free!</h3></div>
+<div class="content-container">
+  <div class="content">
+    <div class="header-message"><h3>Sign Up, It's Free!</h3></div>
 
-  <div class="register">
-    <div class="register-content">
+    <div class="content-margin">
+      <div class="register">
+        <div class="register-content">
 
-      <form ng-submit="register()">
-        <br>
-        Email
-        <br>
-        <input type="email" class="user_assignedTo" value="{{user.email}}" ng-model="user.email">
-        <br><br>
-        <span>First Name</span>Last Name
-        <br>
-        <input class="user_priority" value="{{user.first_name}}" ng-model="user.first_name">
-        <input class="user_createdBy" value="{{user.last_name}}" ng-model="user.last_name">
-        <br><br>
-        Username
-        <br>
-        <input class="user_title" value="{{user.username}}" ng-model="user.username">
-        <br><br>
-        Password
-        <br>
-        <input type="password" class="user_assignedTo" value="{{user.password}}" ng-model="user.password">
-        <br><br>
-        <input type="submit" value="Register" class="register_submit">
-      </form>
-      <div class="error">{{error}}</div>
+          <form ng-submit="register()">
+            Email
+            <br>
+            <input type="email" class="user_assignedTo" value="{{user.email}}" ng-model="user.email">
+            <br><br>
+            <span>First Name</span>Last Name
+            <br>
+            <input class="user_priority" value="{{user.first_name}}" ng-model="user.first_name">
+            <input class="user_createdBy" value="{{user.last_name}}" ng-model="user.last_name">
+            <br><br>
+            Username
+            <br>
+            <input class="user_title" value="{{user.username}}" ng-model="user.username">
+            <br><br>
+            Password
+            <br>
+            <input type="password" class="user_assignedTo" value="{{user.password}}" ng-model="user.password">
+            <br><br>
+            <input type="submit" value="Register" class="register_submit">
+          </form>
+          <div class="error">{{error}}</div>
 
+        </div>
+      </div>
+
+      <div class="small-team">
+        <div class="small-team-image"></div>
+      </div>
+
+    </div> <!-- content-margin -->
+  </div> <!-- content -->
+</div> <!-- content-container -->
+
+<div class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+
+      <div class="logo-footer-container">
+        <div class="logo-footer">
+          <div class="logo-letters">
+            <div class="logo-letters down">K</div>
+            <div class="logo-letters down">a</div>
+            <div class="logo-letters down">N</div>
+          </div>
+          <div class="logo-letters across">B N</div>
+          <div class="triangle">
+            <div class="logo-triangle-bottom-left"></div>
+            <div class="logo-triangle-top-right"></div>
+            <div class="logo-triangle-top-right-opacity"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-container">
+
+        <div class="info">
+          <h5>Stack</h5>
+          <p><a target="_blank" href="https://www.mongodb.com/">MongoDB</a></p>
+          <p><a target="_blank" href="https://expressjs.com/">ExpressJS</a></p>
+          <p><a target="_blank" href="https://angularjs.org/">AngularJS</a></p>
+          <p><a target="_blank" href="https://nodejs.org/">Node.js</a></p>
+        </div>
+
+        <div class="info">
+          <h5>About</h5>
+          <p><a target="_blank" href="http://www.devleague.com/">Bootcamp</a></p>
+          <p><a target="_blank" href="https://github.com/bbishop777">Brad Bishop Github</a></p>
+          <p><a target="_blank" href="https://github.com/poke-bowls/">Micah Koki Github</a></p>
+        </div>
+
+        <div class="info">
+          <h5>Contact</h5>
+          <p>Some Company, LLC</p>
+          <p>123 Paradise Ave</p>
+          <p>Honolulu,HI 96817</p>
+          <p>hawaii@paradise.com</p>
+        </div>
+
+        <div class="info">
+          <h5>Socials</h5>
+          <p>Facebook Logo</p>
+          <p>Twitter Logo</p>
+          <p>Google Plus Logo</p>
+          <p>LinkedIN Logo</p>
+        </div>
+
+    </div>
+
+    <div class="footnote">
+      <p>2016 DevLeague Kanban Project • 9th Cohort</p>
     </div>
   </div>
 </div>
